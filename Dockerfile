@@ -7,7 +7,7 @@ RUN apk add git; \
     cd llvm-project; \
     mkdir build; \
     cd build; \
-    cmake -DLLVM_ENABLE_PROJECTS=clang -G "Unix Makefiles" ../llvm; \
+    cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS=clang -G "Unix Makefiles" ../llvm; \
     make; \
     make check-clang; \
     apk del cmake make gcc g++ python; \
